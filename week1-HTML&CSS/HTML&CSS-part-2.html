@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>week-1-part-2</title>
+</head>
+<body>
+	<form method="post" enctype="multipart/form-data" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+
+	<h1>Please Enter Your Details For Our Dating Websiet!</h1>
+
+	<fieldset>
+		<legend>Your face</legend>
+		<label for="image">Your image*:</label> 
+		<input type="file" id="image name="image" required> <br>
+		<label for="preview">image preview: </label>
+		<img id="preview" id="preview name="preview"> <br>
+	</fieldset>
+
+	<fieldset>
+		<legend>Your General Details</legend>
+		<label for="name">Name*: </label>
+		<input type="text" id="name name="name" required> <br>
+		<label for="gender">Gender: </label>
+		<input type="radio" id="gender" name="gender" value="male"> 
+		<label for="gender">male</label>
+		<input type="radio" id="gender" name="gender" value="woman">
+		<label for="gender">woman</label><br>
+		<label for="age">Age:</label>  
+		<input type="text" id="age" name="age"> <br> 
+		<label for="dateOfBirth">Date of birth:</label> 
+		<input type="date" id="dateOfBrith name="dateOfBrith"> <br>
+		<label for="favoriteColor">Favorite color: </label>
+		<input type="color" id="favoriteColor name="favoriteColor"> <br>
+		<label for="country">Which country: </label>
+		<select>
+			<option name="id="country country" value="China">China</option>
+			<option name="id="country country" value="the United States">the United States</option>
+			<option name="id="country country" value="Japan">Japan</option>
+			<option name="id="country country" value="Germany">Germany</option>
+			<option name="id="country country" value="Russia">Russia</option>
+		</select> <br>
+	</fieldset>
+
+	<fieldset>
+		<legend>Your indicators</legend>
+		<label for="height">Height:</label>
+		<span>Short</span> 
+		<input type="range" id="height" name="height" min="0" max="100"> 
+		<span>Tall</span> <br>
+		<label for="salary">Salary: </label> 
+		<span>Poor</span>
+		<input type="range" id="salary" name="salary" min="0" max="100"> 
+		<span>Rich</span> <br>
+	</fieldset>
+
+	<fieldset>
+		<legend>Your context information</legend>
+		<label for="email">Email*: </label>
+		<input type="email" id="email" name="email" required> <br>
+		<label for="mobile">Mobile: </label>
+		<input type="tel" id="mobile" name="mobile"> <br>
+		<label for="address">Address: </label>
+		<textarea name="address" id="address"></textarea><br>
+		<label for="contact">Method to contact you: </label>
+		<input type="checkbox" id="contact" name="contact" value="email">
+		<label for="contact">Email</label>	 
+		<input type="checkbox" id="contact" name="contact" value="whatsapp">
+		<label for="contact">whatsapp</label> 
+		<input type="checkbox" id="contact" name="contact" value="in-app">
+		<label for="contact">in-app chat</label> 	
+	    <br>
+	</fieldset>
+
+	<input type="submit" id="submit name="submit">
+	</form>
+</body>
+<style type="text/css">
+	fieldset{
+		background: lightyellow;
+		border: 10px solid yellow;
+		margin-bottom: 10px;
+		width: 720px;
+	}
+	label{
+		width: 180px;
+		display: inline-block;
+		text-align: right;
+		text-align: top;
+	}
+	[type=checkbox]+label,[type=radio]+label{
+		width: auto;
+	}
+	span{
+		width: 80px;
+		height: 28px;
+		line-height: 28px;
+		display: inline-block;
+		background: purple;
+		text-align: center;
+	}
+	textarea{
+		width: 360px;
+		height: 50px;
+	}
+	</style>
+
+
+</html>
