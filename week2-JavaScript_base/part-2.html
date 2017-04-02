@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Guessing Game</title>
+</head>
+<body onload="do_Game()">
+	<script>
+	    var original_color = [
+	    	"red", "orange", "yellow", "green", "cyan", "blue", "purple", "white", "black", "gray"
+	    ];
+	    var color = original_color.sort();
+		var target;
+		var guess_input_text ;
+		var finished = false;
+		var guesses = 0;
+		function do_Game(){
+			function getRandomInt(min, max) {
+ 				min = Math.ceil(min);
+ 				max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            random_number_integer = getRandomInt(0,10);
+			target = random_number_integer ;
+			while( !finished  ){
+				guess_input_text = prompt("I'm thinking of a color of follows:\n\n" +
+					color + "\n\nwhat is the color");
+				if ( guess_input_text == null) {
+					if ( window.confirm("Are you sure to exit?")) {
+						break;	
+					}
+					
+				}
+				guesses += 1;
+
+				finished = check_guess();
+			}
+			function check_guess(){
+				// console.log(guess_input_text);
+				if ( !guess_input_text ) {
+					alert("you have no input");
+					return false;
+				}
+				else if ( color.indexOf(guess_input_text) == -1 ){
+					alert("unrecognized color");
+					return false;
+				}
+				else if ((color.indexOf(guess_input_text) > target + 1)){
+					alert("alphabetically higher than the answer");
+					return false;
+				}
+				else if (color.indexOf(guess_input_text) < target + 1){
+					alert("alphabetically lower than the answer");
+					return false;
+				}
+				else {
+					var myBody=document.getElementsByTagName("body")[0];
+					myBody.style.background=color[target+1];
+					alert("You got it!:\n\n" + 
+					"The answer is: " + color[target+1] + "\n\nIt took you " + guesses + " guesses to get the answer");
+					return true;
+					
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

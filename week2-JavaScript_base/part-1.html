@@ -1,0 +1,58 @@
+<!-- A summary:
+Include a list of colors in an array
+In function do_game():
+Randomly select one of those colors in the array as the target
+Display the target (to help with debugging and marking) e.g. alert(target);
+Go into a loop which
+Shows the array of colors and asks the player for their guess
+Stops if the player’s guess is the same as the target
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Guessing Game</title>
+</head>
+<body onload="do_Game()">
+	<script>
+	    var original_color = [
+	    	"red", "orange", "yellow", "green", "cyan", "blue", "purple", "white", "black", "gray"
+	    ];
+	    var color = original_color.sort();
+		var target;
+		var guess_input_text ;
+		var finished = false;
+		var guesses = 0;
+		function do_Game(){
+			function getRandomInt(min, max) {
+ 				min = Math.ceil(min);
+ 				max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            random_number_integer = getRandomInt(0,10);
+			target = random_number_integer ;
+			alert(color[target+1]);
+			while( !finished  ){
+				guess_input_text = prompt("I'm thinking of a color of follows:\n\n" +
+					color + "\n\nwhat is the color");
+				if ( guess_input_text == null) {
+					if ( window.confirm("Are you sure to exit?")) {
+						break;	
+					}
+					
+				}
+				guesses += 1;
+
+				finished = check_guess();
+			}
+			function check_guess(){
+				if ( color.indexOf(guess_input_text) == target + 1 ) {
+					return true;
+					
+				}
+				return false;
+			}
+		}
+	</script>
+</body>
+
+</html>
